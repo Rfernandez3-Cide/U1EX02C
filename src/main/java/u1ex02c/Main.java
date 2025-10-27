@@ -73,7 +73,6 @@ class Car {
 public class Main {
     public static void main(String[] args) {
         try {
-            // Load your existing XML
             File file = new File("cars.xml");
             JAXBContext context = JAXBContext.newInstance(Cars.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
@@ -81,10 +80,8 @@ public class Main {
             Cars cars = (Cars) unmarshaller.unmarshal(file);
             List<Car> list = cars.getCars();
 
-            // Sort by year (ascending)
             Collections.sort(list, Comparator.comparingInt(Car::getYear));
 
-            // Print to console and write to file
             FileWriter writer = new FileWriter("cars.txt");
 
             for (Car car : list) {
