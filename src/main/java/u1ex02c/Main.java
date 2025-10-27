@@ -6,9 +6,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.*;
-
 @XmlRootElement(name = "cars")
 class Cars {
     private List<Car> cars;
