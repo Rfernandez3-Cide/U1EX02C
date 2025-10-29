@@ -5,6 +5,10 @@ import java.io.FileWriter;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 @XmlRootElement(name = "cars")
 class Cars {
@@ -20,7 +24,6 @@ class Cars {
     }
 }
 
-@XmlType(propOrder = { "brand", "model", "year", "price" })
 class Car {
     private String brand;
     private String model;
